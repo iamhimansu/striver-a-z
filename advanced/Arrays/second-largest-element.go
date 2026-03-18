@@ -2,27 +2,34 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func secondLargestElement(nums []int) int {
 
-	currentLargest := nums[0]
-	secondLargest := math.MinInt
+	if len(nums) < 2 {
+		return -1
+	}
 
-	for i := 0; i < len(nums); i++ {
+	currentLargest := nums[0]
+	secondLargest := nums[0]
+	hasSecond := false
+
+	for i := 1; i < len(nums); i++ {
 		current := nums[i]
 
 		if current > currentLargest {
 			secondLargest = currentLargest
 			currentLargest = current
-		} else if current > secondLargest && current != currentLargest {
-			secondLargest = current
+			hasSecond = true
+		} else if current != currentLargest {
+			if !hasSecond || current > secondLargest {
+				secondLargest = current
+				hasSecond = true
+			}
 		}
 	}
 
-	// no second largest found
-	if secondLargest == math.MinInt {
+	if !hasSecond {
 		return -1
 	}
 
