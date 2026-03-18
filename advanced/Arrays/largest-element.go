@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func secondLargestElement(nums []int) int {
+func largestElement(nums []int) int {
 
 	currentLargest := -1
 	current := 0
@@ -21,14 +21,11 @@ func secondLargestElement(nums []int) int {
 
 	}
 
-	if currentLargest > 0 {
-		return currentLargest
-	}
+	return currentLargest
 
-	return -1
 }
 
 func main() {
 	nums := []int{12, 35, 1, 10, 34, 1}
-	fmt.Println(secondLargestElement(nums))
+	fmt.Println(largestElement(nums))
 }
