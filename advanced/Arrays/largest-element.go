@@ -15,7 +15,7 @@ func largestElement(nums []int) int {
 		next = nums[i+1]
 
 		//next largest
-		if current < next && next > currentLargest {
+		if next > currentLargest {
 			currentLargest = next
 		}
 
@@ -26,6 +26,6 @@ func largestElement(nums []int) int {
 }
 
 func main() {
-	nums := []int{12, 35, 1, 10, 34, 1}
+	nums := []int{12, 35, 1, 10, 34, 33, 1}
 	fmt.Println(largestElement(nums))
 }
