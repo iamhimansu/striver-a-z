@@ -5,14 +5,13 @@ import "fmt"
 func selectionSort(nums []int) []int {
 	for i := 0; i < len(nums)-1; i++ {
 		min := i
-	for j := i; j < len(nums); j++ {
-		if nums[j] < nums[min] {
+		for j := i + 1; j < len(nums)-i; j++ {
+			if nums[j] < nums[min] {
 				min = j
 			}
 		}
-		temp := nums[i]
-		nums[i] = nums[min]
-		nums[min] = temp
+
+		nums[i], nums[min] = nums[min], nums[i]
 	}
 
 	return nums
