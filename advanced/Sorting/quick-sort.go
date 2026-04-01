@@ -10,12 +10,12 @@ func partition(arr []int, low int, high int) int {
 		//[1, 2, 3, 4, 5, 7]
 		//4 < 5
 		// left side
-		for arr[i] <= pivot && i <= high {
+		for i <= high && arr[i] <= pivot {
 			i++
 		}
 		//right side
 		//4>1
-		for arr[j] > pivot && j > low {
+		for j > low && arr[j] > pivot {
 			j--
 		}
 		if i < j {
@@ -39,7 +39,7 @@ func quickSort(arr []int, low int, high int) []int {
 }
 
 func main() {
-	arr := []int{4, 6, 2, 5, 7, 9, 1, 3}
+	arr := []int{7, 4, 1, 5, 3}
 	sorted := quickSort(arr, 0, len(arr)-1)
 	fmt.Printf("%v", sorted)
 }
