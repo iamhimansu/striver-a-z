@@ -31,7 +31,7 @@ func moveZeroesToEnd(nums []int) []int {
 
 func main() {
 
-	arr := []int{1, 0, 8, -9, 0, 0, 1, 3, -2}
+	arr := []int{1, -6, -9, 8, -9, 0, 0, 1, 3, -2}
 	mztewo := moveZeroesToEndWithoutOrder(arr)
 	mzte := moveZeroesToEnd(arr)
 
